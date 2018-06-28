@@ -8,7 +8,7 @@ int *generateArr(int size)
   int *arr = new int[size];
   for (i = 0; i < size; i++)
   {
-    arr[i] = rand();
+    arr[i] = rand() / 2700000;
   }
   return arr;
 };
@@ -21,4 +21,4 @@ void printArr(int *arr, int size)
     printf("%d, ", arr[i]);
   }
   printf("\n");
-};
+}

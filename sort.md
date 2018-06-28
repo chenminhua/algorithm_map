@@ -38,3 +38,40 @@ BUILD-MAX-HEAP(A)
     for i <- [length[A]/2] downto 1
         do MAX-HEAPIFY(A, i)
 ```
+
+## 快速排序
+经典的分治算法
+
+```
+QUICKSORT(A, p, r)
+if p < r
+    then q <- PARTION(A, p, r)
+        QUICKSORT(A, p, q-1)
+        QUICKSORT(A, q+1, r)
+
+PARTITION(A, p, r)
+x <- A[r]
+i <- p-1
+for j <- p to r-1
+    do if A[j] <= x
+        then i <- i+1
+            exchange A[i] <-> A[j]
+exchange A[i+1] <-> A[r]
+return i+1
+```
+
+# 线性时间排序
+计数排序，基数排序，桶排序
+
+## 计数排序
+如果数据都差不多大，计数排序贼牛逼。空间换时间
+
+```
+COUNTING-SORT(A,B,k)
+for i in 0 to k
+    C[i] = 0
+for j in 1 to length(A)
+    C[A[j]] <- C[A[j]] + 1
+```
+
+
