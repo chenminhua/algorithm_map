@@ -6,3 +6,35 @@
 二叉堆的高度为树根的高度O(log n)。
 二叉堆是一棵完全二叉树（除了最后一层外每层都是满的）。
 对于最大堆而言，父节点一定大于等于子节点。最大元素在根结点。
+
+MAX-HEAPIFY,保持堆序 O(log n)
+
+BUILD-MAX-HEAP,线性时间运行，构建最大堆
+
+HEAPSORT O(n * log n)
+
+
+#### MAX-HEAPIFY
+对数组进行调整，输入为数组A和下标i,假定LEFT(i)和RIGHT(i)为根的两棵二叉树都是最大堆，但是A[i]可能小于其子女，所以要调整堆序让A[i]在堆中下降。
+
+```
+MAX-HEAPIFY(A,i)
+    l <- LEFT(i)
+    r <- RIGHT(i)
+    if l <= heap-size[A] and A[l]>A[i]
+        then largest <- l
+        else largest <- i
+    if r <= heap-size[A] and A[r] > A[largest]
+        then largest <-r
+    if largest != i
+        then exchange A[i] <-> A[largest]
+            MAX-HEAPIFY(A, largest)
+```
+
+#### BUILD-MAX-HEAP
+```
+BUILD-MAX-HEAP(A)
+    heap-size[A] <- length(A)
+    for i <- [length[A]/2] downto 1
+        do MAX-HEAPIFY(A, i)
+```
