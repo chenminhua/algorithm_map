@@ -10,5 +10,6 @@ int main()
         {0, 0, 0, 1, 0}};
     Maze maze(vec);
     maze.display();
-    maze.solve();
+    maze.solveByBFS();
+    //maze.solveByDFS();
 }

@@ -1,4 +1,5 @@
 #include <vector>
+#include <queue>
 struct point
 {
   int row, col;
@@ -8,7 +9,6 @@ class Maze
 {
 private:
   std::vector<std::vector<int>> maze;
-  std::vector<std::vector<point>> predecessor;
   int width;
   int height;
 
@@ -17,7 +17,8 @@ public:
   int getHeight() const;
   int getWeight() const;
   void display() const;
-  void solve();
+  void solveByDFS();
+  void solveByBFS();
   bool checkExit(struct point) const;
   bool checkVisitable(struct point) const;
 };
